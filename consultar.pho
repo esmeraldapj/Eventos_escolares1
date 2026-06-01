@@ -1,0 +1,14 @@
+<?php
+include("conexion.php");
+
+$sql = "SELECT * FROM eventos";
+$resultado = $conexion->query($sql);
+
+$datos = array();
+
+while($fila = $resultado->fetch_assoc()){
+    $datos[] = $fila;
+}
+
+echo json_encode($datos);
+?>
